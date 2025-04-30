@@ -3,7 +3,7 @@ import Button from "@/components/Button";
 
 const Hero = () => {
   return (
-    <section className="relative h-[80vh] flex items-center justify-center bg-brown">
+    <section className="relative h-[80vh] flex items-center justify-center bg-brown pt-28">
       <div className="absolute inset-0 z-0">
         <img 
           src="/images/hero/hero.webp" 
