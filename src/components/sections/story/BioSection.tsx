@@ -4,24 +4,31 @@ const BioSection = () => {
   return (
     <section className="py-24 bg-cream">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-serif text-brown mb-12 text-center">About Me</h2>
-        <div className="flex flex-col lg:flex-row items-center gap-12">
-          <div className="w-full lg:w-1/2">
-            <div className="aspect-[3/4] bg-cream/50 rounded-lg shadow-lg overflow-hidden">
+        <div className="flex flex-col md:flex-row items-center gap-12">
+          <div className="w-full md:w-2/5">
+            <div className="aspect-[3/4] bg-cream/50 rounded-lg overflow-hidden">
               <img
                 src={storyData.bio.image}
-                alt="Bio Image"
+                alt="Sunshine - Model, Emcee, and Entrepreneur"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
           </div>
-          <div className="w-full lg:w-1/2">
-            <h1 className="text-4xl md:text-5xl font-serif text-brown mb-6">
-              {storyData.bio.title}
-            </h1>
-            <p className="text-lg text-khaki leading-relaxed">
-              {storyData.bio.description}
-            </p>
+          <div className="w-full md:w-3/5 flex flex-col justify-center">
+            <div className="max-w-xl">
+              <h1 className="text-4xl md:text-5xl font-serif text-brown mb-8 text-center md:text-left">
+                A Ray of<br />Sunshine
+              </h1>
+              <div className="space-y-6 text-lg text-brown/80 leading-relaxed">
+                <p>
+                  Sunshine, born in 1988 in Ipoh, Malaysia, carries a unique blend of Indian, British, and Mongolian Chinese heritage. With early years spent in London and a background in Public Relations, she began her career at 17 in the event scene before being discovered as a model.
+                </p>
+                <p>
+                  She's starred in commercials for TM UNIFI, AVON, and McDonald's, and has walked for designers like Melinda Looi and Jovian Mandagie. With 15 years in the industry and shows across Asia and the Middle East, Sunshine is also a sought-after emcee known for her charm and presence.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

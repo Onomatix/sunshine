@@ -4,7 +4,7 @@ import ServicesSection from "@/components/sections/story/ServicesSection";
 import GallerySection from "@/components/sections/story/GallerySection";
 import VideoSection from "@/components/sections/story/VideoSection";
 import MagicBraBanner from "@/components/sections/story/MagicBraBanner";
-import ContactForm from "@/components/sections/story/ContactForm";
+/* import ContactForm from "@/components/sections/story/ContactForm"; */
 
 const StoryPage = () => {
   return (
@@ -14,7 +14,7 @@ const StoryPage = () => {
       <GallerySection />
       <VideoSection />
       <MagicBraBanner />
-      <ContactForm />
+      {/* <ContactForm /> */}
     </Layout>
   );
 };
