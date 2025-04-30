@@ -6,13 +6,13 @@ const ProductFeatures = () => {
           Experience the Magic
         </h2>
         
-        {/* Fashion Magic */}
+        {/* Fashion Magic - Feature 1 */}
         <div className="mb-24">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="w-full lg:w-1/2">
               <div className="bg-cream/50 rounded-lg p-8">
                 <img 
-                  src="https://placehold.co/800x600/e2d5c3/453628?text=Fashion+Magic" 
+                  src="/images/features/feature_01.png" 
                   alt="That's Fashion Magic!" 
                   className="w-full rounded-lg"
                 />
@@ -34,7 +34,7 @@ const ProductFeatures = () => {
           </div>
         </div>
 
-        {/* Super Slim */}
+        {/* Super Slim - Feature 2 */}
         <div className="mb-24">
           <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
             <div className="w-full lg:w-1/2">
@@ -53,7 +53,7 @@ const ProductFeatures = () => {
             <div className="w-full lg:w-1/2">
               <div className="bg-cream/50 rounded-lg p-8">
                 <img 
-                  src="https://placehold.co/800x600/e2d5c3/453628?text=Super+Slim" 
+                  src="/images/features/feature_02.png" 
                   alt="Super Slim. Super Thin." 
                   className="w-full rounded-lg"
                 />
@@ -62,13 +62,13 @@ const ProductFeatures = () => {
           </div>
         </div>
 
-        {/* Effortlessly Seamless */}
+        {/* Effortlessly Seamless - Feature 3 */}
         <div className="mb-24">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="w-full lg:w-1/2">
               <div className="bg-cream/50 rounded-lg p-8">
                 <img 
-                  src="https://placehold.co/800x600/e2d5c3/453628?text=Seamless" 
+                  src="/images/features/feature_03.png" 
                   alt="Effortlessly Seamless" 
                   className="w-full rounded-lg"
                 />
@@ -90,7 +90,7 @@ const ProductFeatures = () => {
           </div>
         </div>
 
-        {/* Modern Woman */}
+        {/* Modern Woman - Feature 4 */}
         <div className="mb-24">
           <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
             <div className="w-full lg:w-1/2">
@@ -100,24 +100,28 @@ const ProductFeatures = () => {
               </p>
             </div>
             <div className="w-full lg:w-1/2">
-              <img 
-                src="https://placehold.co/800x600/e2d5c3/453628?text=Modern+Woman" 
-                alt="Designed for the Modern Woman" 
-                className="w-full rounded-lg"
-              />
+              <div className="bg-cream/50 rounded-lg p-8">
+                <img 
+                  src="/images/features/feature_04.png" 
+                  alt="Designed for the Modern Woman" 
+                  className="w-full rounded-lg"
+                />
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Fun Elements */}
+        {/* Fun Elements - Feature 5 */}
         <div className="mb-24">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="w-full lg:w-1/2">
-              <img 
-                src="https://placehold.co/800x600/e2d5c3/453628?text=Fun+Elements" 
-                alt="Fun Elements, Endless Styles" 
-                className="w-full rounded-lg"
-              />
+              <div className="bg-cream/50 rounded-lg p-8">
+                <img 
+                  src="/images/features/feature_05.png" 
+                  alt="Fun Elements, Endless Styles" 
+                  className="w-full rounded-lg"
+                />
+              </div>
             </div>
             <div className="w-full lg:w-1/2">
               <h3 className="text-2xl md:text-3xl font-serif text-brown mb-4">Fun Elements, Endless Styles</h3>
@@ -128,7 +132,7 @@ const ProductFeatures = () => {
           </div>
         </div>
 
-        {/* Features */}
+        {/* Features - Feature 6 */}
         <div className="mb-24">
           <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
             <div className="w-full lg:w-1/2">
@@ -141,11 +145,13 @@ const ProductFeatures = () => {
               </ul>
             </div>
             <div className="w-full lg:w-1/2">
-              <img 
-                src="https://placehold.co/800x600/e2d5c3/453628?text=Features" 
-                alt="All the Right Features" 
-                className="w-full rounded-lg"
-              />
+              <div className="bg-cream/50 rounded-lg p-8">
+                <img 
+                  src="/images/features/feature_06.png" 
+                  alt="All the Right Features" 
+                  className="w-full rounded-lg"
+                />
+              </div>
             </div>
           </div>
         </div>

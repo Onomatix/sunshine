@@ -4,7 +4,17 @@ import { testimonials } from './Testimonials';
 
 const FeaturedProduct = () => {
   const [quantity, setQuantity] = useState(1);
+  const [mainImage, setMainImage] = useState('/images/product/product_01.png');
   const { addToCart } = useCart();
+
+  const productImages = [
+    '/images/product/product_01.png',
+    '/images/product/product_02.png',
+    '/images/product/product_03.png',
+    '/images/product/product_04.png',
+    '/images/product/product_05.png',
+    '/images/product/product_06.png'
+  ];
 
   const handleAddToCart = () => {
     const product = {
@@ -37,23 +47,30 @@ const FeaturedProduct = () => {
                 </span>
               </div>
               {/* Main Image */}
-              <div className="aspect-square bg-white/50 rounded-lg mb-4 flex flex-col items-center justify-center p-6">
-                <span className="text-[#453628] text-3xl font-medium mb-4">Magic Bra Bundle</span>
-                <svg className="w-24 h-24 text-brown/30" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H3V6h18v12zM9 12c0-1.66 1.34-3 3-3s3 1.34 3 3-1.34 3-3 3-3-1.34-3-3z"/>
-                </svg>
+              <div className="aspect-square bg-white/50 rounded-lg mb-4 overflow-hidden">
+                <img
+                  src={mainImage}
+                  alt="Magic Bra Premium Bundle"
+                  className="w-full h-full object-cover"
+                />
               </div>
               {/* Thumbnail Row */}
-              <div className="grid grid-cols-3 gap-4 max-w-[400px]">
-                <div className="aspect-square bg-white/50 rounded-lg flex items-center justify-center p-4">
-                  <span className="text-[#453628] text-lg">Item 1</span>
-                </div>
-                <div className="aspect-square bg-white/50 rounded-lg flex items-center justify-center p-4">
-                  <span className="text-[#453628] text-lg">Item 2</span>
-                </div>
-                <div className="aspect-square bg-white/50 rounded-lg flex items-center justify-center p-4">
-                  <span className="text-[#453628] text-lg">Item 3</span>
-                </div>
+              <div className="grid grid-cols-6 gap-4 max-w-[800px]">
+                {productImages.map((image, index) => (
+                  <div 
+                    key={index}
+                    className={`aspect-square bg-white/50 rounded-lg overflow-hidden cursor-pointer transition-all ${
+                      mainImage === image ? 'ring-2 ring-olive' : 'hover:ring-2 hover:ring-brown/50'
+                    }`}
+                    onClick={() => setMainImage(image)}
+                  >
+                    <img
+                      src={image}
+                      alt={`Magic Bra Premium Bundle - View ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
