@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useCart } from "@/context/CartContext";
 import { useTheme } from '@/context/ThemeContext';
 import { testimonials } from './Testimonials';
+import { Link } from 'react-router-dom';
 
 const FeaturedProduct = () => {
   const [quantity, setQuantity] = useState(1);
@@ -22,7 +23,7 @@ const FeaturedProduct = () => {
     const product = {
       id: "magic-bra-bundle",
       name: "MAGIC BRA PREMIUM BUNDLE",
-      price: 92.65,
+      price: 399.00,
       quantity: quantity
     };
     addToCart(product);
@@ -36,7 +37,7 @@ const FeaturedProduct = () => {
   };
 
   return (
-    <section className={`py-16 ${theme === 'dark' ? 'bg-[#111111]' : 'bg-cream'} transition-colors duration-300`}>
+    <section className={`py-16 ${theme === 'dark' ? 'bg-[#392200]' : 'bg-cream'} transition-colors duration-300`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-start gap-8">
 
@@ -46,8 +47,8 @@ const FeaturedProduct = () => {
             <div className="block lg:hidden mb-6 text-center space-y-2">
               <h1 className={`text-2xl font-serif ${theme === 'dark' ? 'text-white' : 'text-brown'}`}>MAGIC BRA PREMIUM BUNDLE</h1>
               <div className="flex justify-center items-baseline gap-2">
-                <span className={`text-xl font-serif ${theme === 'dark' ? 'text-white' : 'text-brown'}`}>$92.65</span>
-                <span className={`text-sm ${theme === 'dark' ? 'text-white/60' : 'text-khaki'} line-through`}>$109.50</span>
+                <span className={`text-xl font-serif ${theme === 'dark' ? 'text-white' : 'text-brown'}`}>RM 399.00</span>
+                <span className={`text-sm ${theme === 'dark' ? 'text-white/60' : 'text-khaki'} line-through`}>RM 459.00</span>
               </div>
               <div className="flex justify-center items-center gap-2">
                 <div className="flex">
@@ -114,8 +115,8 @@ const FeaturedProduct = () => {
 
             {/* Desktop Price */}
             <div className="flex items-baseline gap-3 hidden lg:flex">
-              <span className={`text-3xl font-serif ${theme === 'dark' ? 'text-white' : 'text-brown'}`}>$92.65</span>
-              <span className={`text-lg ${theme === 'dark' ? 'text-white/60' : 'text-khaki'} line-through`}>$109.50</span>
+              <span className={`text-3xl font-serif ${theme === 'dark' ? 'text-white' : 'text-brown'}`}>RM 59.00</span>
+              <span className={`text-lg ${theme === 'dark' ? 'text-white/60' : 'text-khaki'} line-through`}>RM 99.00</span>
             </div>
 
             {/* Desktop Reviews */}
@@ -148,7 +149,7 @@ const FeaturedProduct = () => {
             </p>
 
             {/* Quantity and Add to Cart */}
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-col w-full gap-4">
               <div className={`flex items-center border ${theme === 'dark' ? 'border-white/20' : 'border-brown'} rounded mx-auto`}>
                 <button
                   onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
@@ -175,19 +176,26 @@ const FeaturedProduct = () => {
               </div>
               <button
                 onClick={handleAddToCart}
-                className={`px-6 ${theme === 'dark' ? 'bg-white text-[#111111] hover:bg-white/90' : 'bg-olive text-cream hover:bg-brown'} h-12 rounded font-medium transition-colors focus:outline-none focus:ring-2 ${theme === 'dark' ? 'focus:ring-white' : 'focus:ring-olive'} focus:ring-offset-2`}
+                className={`w-full px-6 ${theme === 'dark' ? 'bg-white text-[#111111] hover:bg-white/90' : 'bg-olive text-cream hover:bg-brown'} h-12 rounded font-medium transition-colors focus:outline-none focus:ring-2 ${theme === 'dark' ? 'focus:ring-white' : 'focus:ring-olive'} focus:ring-offset-2`}
                 aria-label="Add Magic Bra Premium Bundle to cart"
               >
                 ADD TO CART
               </button>
+              <Link
+                to="/checkout"
+                className={`w-full px-6 ${theme === 'dark' ? 'bg-[#350006] text-white hover:bg-[#350006]/90' : 'bg-brown text-cream hover:bg-brown/90'} h-12 rounded font-medium transition-colors focus:outline-none focus:ring-2 ${theme === 'dark' ? 'focus:ring-white' : 'focus:ring-olive'} focus:ring-offset-2 flex items-center justify-center`}
+                aria-label="Go to cart"
+              >
+                GO TO CART
+              </Link>
             </div>
 
             {/* Free Shipping Notice */}
-            <div className={`${theme === 'dark' ? 'bg-[#350006]' : 'bg-[#F5F5F2]'} p-4 rounded`}>
+           {/*  <div className={`${theme === 'dark' ? 'bg-[#350006]' : 'bg-[#F5F5F2]'} p-4 rounded`}>
               <p className={`${theme === 'dark' ? 'text-white/80' : 'text-olive'} text-center text-sm`}>
-                FREE SHIPPING ON DOMESTIC ORDERS OVER $50
+                FREE SHIPPING ON DOMESTIC ORDERS OVER RM 199
               </p>
-            </div>
+            </div> */}
           </div>
 
         </div>

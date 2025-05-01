@@ -39,16 +39,14 @@ const Navbar = () => {
             >
               {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
             </button>
-            <div className="hidden md:flex items-center">
-              <Link to="/checkout" className={`${theme === 'dark' ? 'text-dark-text hover:text-dark-secondary' : 'text-brown hover:text-olive'} transition-colors relative`}>
-                <ShoppingBag size={24} />
-                {totalItems > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-olive text-cream text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
-                    {totalItems}
-                  </span>
-                )}
-              </Link>
-            </div>
+            <Link to="/checkout" className={`${theme === 'dark' ? 'text-dark-text hover:text-dark-secondary' : 'text-brown hover:text-olive'} transition-colors relative`}>
+              <ShoppingBag size={24} />
+              {totalItems > 0 && (
+                <span className="absolute -top-2 -right-2 bg-olive text-cream text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                  {totalItems}
+                </span>
+              )}
+            </Link>
             <div className="md:hidden">
               <button
                 onClick={toggleMenu}
@@ -98,13 +96,6 @@ const Navbar = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Story
-            </Link>
-            <Link
-              to="/checkout"
-              className={`block px-3 py-2 ${theme === 'dark' ? 'text-dark-text hover:text-dark-secondary' : 'text-brown hover:text-olive'} transition-colors font-medium`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Cart {totalItems > 0 && `(${totalItems})`}
             </Link>
           </div>
         </div>
