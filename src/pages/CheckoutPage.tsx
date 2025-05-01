@@ -1,8 +1,10 @@
 import Layout from "@/components/Layout";
 import { useCart } from "@/context/CartContext";
+import { useTheme } from '@/context/ThemeContext';
 
 const CheckoutPage = () => {
   const { items, totalItems } = useCart();
+  const { theme } = useTheme();
   const phoneNumber = "YOUR_WHATSAPP_NUMBER"; // Replace with actual number
 
   const handleWhatsAppClick = () => {
@@ -15,28 +17,28 @@ const CheckoutPage = () => {
 
   return (
     <Layout>
-      <div className="py-24">
+      <div className={`py-48 ${theme === 'dark' ? 'bg-[#111111]' : 'bg-cream'} transition-colors duration-300`}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-3xl font-serif text-brown mb-8">Your Order</h1>
+            <h1 className={`text-3xl font-serif ${theme === 'dark' ? 'text-white' : 'text-brown'} mb-8`}>Your Order</h1>
             
             {items.length > 0 ? (
               <>
-                <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+                <div className={`${theme === 'dark' ? 'bg-[#350006]' : 'bg-white'} rounded-lg shadow-md p-6 mb-8 transition-colors duration-300`}>
                   {items.map((item) => (
-                    <div key={item.id} className="flex justify-between items-center py-4 border-b border-cream last:border-0">
+                    <div key={item.id} className={`flex justify-between items-center py-4 border-b ${theme === 'dark' ? 'border-white/10' : 'border-cream'} last:border-0`}>
                       <div>
-                        <h3 className="text-lg font-medium text-brown">{item.name}</h3>
-                        <p className="text-khaki">Quantity: {item.quantity}</p>
+                        <h3 className={`text-lg font-medium ${theme === 'dark' ? 'text-white' : 'text-brown'}`}>{item.name}</h3>
+                        <p className={theme === 'dark' ? 'text-white/80' : 'text-khaki'}>Quantity: {item.quantity}</p>
                       </div>
-                      <p className="text-brown font-medium">${(item.price * item.quantity).toFixed(2)}</p>
+                      <p className={`${theme === 'dark' ? 'text-white' : 'text-brown'} font-medium`}>${(item.price * item.quantity).toFixed(2)}</p>
                     </div>
                   ))}
                   
-                  <div className="mt-6 pt-6 border-t border-cream">
+                  <div className={`mt-6 pt-6 border-t ${theme === 'dark' ? 'border-white/10' : 'border-cream'}`}>
                     <div className="flex justify-between items-center">
-                      <p className="text-lg font-medium text-brown">Total</p>
-                      <p className="text-xl font-medium text-brown">${totalAmount.toFixed(2)}</p>
+                      <p className={`text-lg font-medium ${theme === 'dark' ? 'text-white' : 'text-brown'}`}>Total</p>
+                      <p className={`text-xl font-medium ${theme === 'dark' ? 'text-white' : 'text-brown'}`}>${totalAmount.toFixed(2)}</p>
                     </div>
                   </div>
                 </div>
@@ -52,7 +54,7 @@ const CheckoutPage = () => {
                 </button>
               </>
             ) : (
-              <p className="text-center text-khaki">Your cart is empty</p>
+              <p className={`text-center ${theme === 'dark' ? 'text-white/80' : 'text-khaki'}`}>Your cart is empty</p>
             )}
           </div>
         </div>

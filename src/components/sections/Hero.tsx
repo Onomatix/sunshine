@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import Button from "@/components/Button";
 
 const Hero = () => {
   return (
-    <section className="relative h-[80vh] flex items-center justify-center bg-brown pt-28">
+    <section className="relative h-[140vh] flex items-center justify-center bg-brown pt-28">
       <div className="absolute inset-0 z-0">
         <img 
           src="/images/hero/hero.webp" 
@@ -17,13 +16,13 @@ const Hero = () => {
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif font-medium text-cream text-center drop-shadow-2xl">
             Feel the Magic
           </h1>
-          <Link to="/shop">
+          <Link to="/story">
             <button className="bg-cream text-brown px-8 py-4 text-lg font-medium rounded-lg
               hover:bg-cream/90 transition-all duration-300
               focus:outline-none focus:ring-2 focus:ring-cream focus:ring-offset-2 focus:ring-offset-brown/20"
               aria-label="Shop Now"
             >
-              Shop Now
+              Read the Story
             </button>
           </Link>
         </div>

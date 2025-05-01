@@ -1,12 +1,15 @@
 import { storyData } from '@/data/storyData';
+import { useTheme } from '@/context/ThemeContext';
 
 const BioSection = () => {
+  const { theme } = useTheme();
+
   return (
-    <section className="py-24 bg-cream">
+    <section className={`py-24 ${theme === 'dark' ? 'bg-[#3b000d]' : 'bg-cream'} pt-36 transition-colors duration-300`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="w-full md:w-2/5">
-            <div className="aspect-[3/4] bg-cream/50 rounded-lg overflow-hidden">
+            <div className={`aspect-[3/4] ${theme === 'dark' ? 'bg-[#111111]/50' : 'bg-cream/50'} rounded-lg overflow-hidden`}>
               <img
                 src={storyData.bio.image}
                 alt="Sunshine - Model, Emcee, and Entrepreneur"
@@ -17,10 +20,10 @@ const BioSection = () => {
           </div>
           <div className="w-full md:w-3/5 flex flex-col justify-center">
             <div className="max-w-xl">
-              <h1 className="text-4xl md:text-5xl font-serif text-brown mb-8 text-center md:text-left">
-                A Ray of<br />Sunshine
+              <h1 className={`text-4xl md:text-5xl font-serif ${theme === 'dark' ? 'text-white' : 'text-brown'} mb-8 text-center md:text-left`}>
+                A Ray of Sunshine
               </h1>
-              <div className="space-y-6 text-lg text-brown/80 leading-relaxed">
+              <div className={`space-y-6 text-lg ${theme === 'dark' ? 'text-white/80' : 'text-brown/80'} leading-relaxed text-center md:text-left`}>
                 <p>
                   Sunshine, born in 1988 in Ipoh, Malaysia, carries a unique blend of Indian, British, and Mongolian Chinese heritage. With early years spent in London and a background in Public Relations, she began her career at 17 in the event scene before being discovered as a model.
                 </p>

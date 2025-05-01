@@ -1,12 +1,12 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
     <title>Sunshine Cosmetics — The Story of Magic</title>
-    <meta name="description" content="Sunshine’s journey from Ipoh to the international runway shines through her work as a model, emcee, and founder of Sunshine Cosmetics. Discover her story and the Magic Bra." />
+    <meta name="description" content="Sunshine's journey from Ipoh to the international runway shines through her work as a model, emcee, and founder of Sunshine Cosmetics. Discover her story and the Magic Bra." />
     <meta name="author" content="Sunshine" />
     <meta name="keywords" content="Sunshine Cosmetics, Magic Bra, Malaysia model, emcee, runway, modelling, Sunshine, public relations, TM Unifi, AVON, KL Mobile Entertainment, Melinda Looi" />
     <meta name="theme-color" content="#fcefe9" />
@@ -23,14 +23,22 @@
     <meta name="twitter:title" content="Sunshine Cosmetics — The Story of Magic" />
     <meta name="twitter:description" content="Discover Sunshine's inspiring journey as a model, emcee, and entrepreneur. The Magic Bra redefines beauty and comfort." />
     <meta name="twitter:image" content="https://sunshinecosmetics.vercel.app/share-image.jpg" />
-    <meta name="twitter:site" content="@sunshinecosmetics" />
+    <meta name="twitter:site" content="@ladysunshineaileen" />
   
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <script>
+      (function(){
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
   </head>
   
-
-  <body>
+  <body class="min-h-screen bg-background text-foreground">
     <div id="root"></div>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>

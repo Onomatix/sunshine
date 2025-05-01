@@ -54,6 +54,6 @@ export const storyData = {
   "magicBraBanner": {
     "text": "Loved this story? Discover the Magic Bra",
     "buttonText": "View Product",
-    "link": "/shop#magicbra"
+    "link": "/checkout#magicbra"
   }
 }; 

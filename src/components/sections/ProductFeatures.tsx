@@ -1,32 +1,37 @@
+import { useTheme } from '@/context/ThemeContext';
+
 const ProductFeatures = () => {
+  const { theme } = useTheme();
+
   return (
-    <section className="py-16 bg-white">
+    <section className={`py-16 ${theme === 'dark' ? 'bg-[#1a0005]' : 'bg-white'} transition-colors duration-300`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-serif text-brown mb-12 text-center">
+        {/* Section heading: center on all sizes */}
+        <h2 className={`text-3xl md:text-4xl font-serif ${theme === 'dark' ? 'text-white' : 'text-brown'} mb-12 text-center`}>
           Experience the Magic
         </h2>
-        
-        {/* Fashion Magic - Feature 1 */}
+
+        {/* === Feature 1 === */}
         <div className="mb-24">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="w-full lg:w-1/2">
-              <div className="bg-cream/50 rounded-lg p-8">
-                <img 
-                  src="/images/features/feature_01.png" 
-                  alt="That's Fashion Magic!" 
+              <div className={`${theme === 'dark' ? 'bg-[#350006]/50' : 'bg-cream/50'} rounded-lg p-8`}>
+                <img
+                  src="/images/features/feature_01.png"
+                  alt="That's Fashion Magic!"
                   className="w-full rounded-lg"
                 />
               </div>
             </div>
-            <div className="w-full lg:w-1/2">
+            <div className="w-full lg:w-1/2 text-center lg:text-left">
               <div className="prose prose-lg">
-                <div className="flex items-center gap-3 mb-4">
-                  <svg className="w-6 h-6 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="flex items-center gap-3 mb-4 justify-center lg:justify-start">
+                  <svg className={`w-6 h-6 ${theme === 'dark' ? 'text-white' : 'text-olive'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                   </svg>
-                  <h3 className="text-2xl md:text-3xl font-serif text-brown m-0">That's Fashion Magic!</h3>
+                  <h3 className={`text-2xl md:text-3xl font-serif ${theme === 'dark' ? 'text-white' : 'text-brown'} m-0`}>That's Fashion Magic!</h3>
                 </div>
-                <p className="text-khaki leading-relaxed">
+                <p className={`${theme === 'dark' ? 'text-white/80' : 'text-khaki'} leading-relaxed`}>
                   Plunging neckline? No problem. The Magic Bra Maxi Plunge B Push-Up Bra by Sunshine Cosmetics gives you the lift you need while staying completely invisible.
                 </p>
               </div>
@@ -34,27 +39,27 @@ const ProductFeatures = () => {
           </div>
         </div>
 
-        {/* Super Slim - Feature 2 */}
+        {/* === Feature 2 === */}
         <div className="mb-24">
           <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
-            <div className="w-full lg:w-1/2">
+            <div className="w-full lg:w-1/2 text-center lg:text-left">
               <div className="prose prose-lg">
-                <div className="flex items-center gap-3 mb-4">
-                  <svg className="w-6 h-6 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="flex items-center gap-3 mb-4 justify-center lg:justify-start">
+                  <svg className={`w-6 h-6 ${theme === 'dark' ? 'text-white' : 'text-olive'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                   </svg>
-                  <h3 className="text-2xl md:text-3xl font-serif text-brown m-0">Super Slim. Super Thin.</h3>
+                  <h3 className={`text-2xl md:text-3xl font-serif ${theme === 'dark' ? 'text-white' : 'text-brown'} m-0`}>Super Slim. Super Thin.</h3>
                 </div>
-                <p className="text-khaki leading-relaxed">
+                <p className={`${theme === 'dark' ? 'text-white/80' : 'text-khaki'} leading-relaxed`}>
                   Engineered to feel like air, our featherlight design offers a zero-weight gravity experience — so light, you'll forget it's even there.
                 </p>
               </div>
             </div>
             <div className="w-full lg:w-1/2">
-              <div className="bg-cream/50 rounded-lg p-8">
-                <img 
-                  src="/images/features/feature_02.png" 
-                  alt="Super Slim. Super Thin." 
+              <div className={`${theme === 'dark' ? 'bg-[#350006]/50' : 'bg-cream/50'} rounded-lg p-8`}>
+                <img
+                  src="/images/features/feature_02.png"
+                  alt="Super Slim. Super Thin."
                   className="w-full rounded-lg"
                 />
               </div>
@@ -62,27 +67,27 @@ const ProductFeatures = () => {
           </div>
         </div>
 
-        {/* Effortlessly Seamless - Feature 3 */}
+        {/* === Feature 3 === */}
         <div className="mb-24">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="w-full lg:w-1/2">
-              <div className="bg-cream/50 rounded-lg p-8">
-                <img 
-                  src="/images/features/feature_03.png" 
-                  alt="Effortlessly Seamless" 
+              <div className={`${theme === 'dark' ? 'bg-[#350006]/50' : 'bg-cream/50'} rounded-lg p-8`}>
+                <img
+                  src="/images/features/feature_03.png"
+                  alt="Effortlessly Seamless"
                   className="w-full rounded-lg"
                 />
               </div>
             </div>
-            <div className="w-full lg:w-1/2">
+            <div className="w-full lg:w-1/2 text-center lg:text-left">
               <div className="prose prose-lg">
-                <div className="flex items-center gap-3 mb-4">
-                  <svg className="w-6 h-6 text-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="flex items-center gap-3 mb-4 justify-center lg:justify-start">
+                  <svg className={`w-6 h-6 ${theme === 'dark' ? 'text-white' : 'text-olive'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                   </svg>
-                  <h3 className="text-2xl md:text-3xl font-serif text-brown m-0">Effortlessly Seamless</h3>
+                  <h3 className={`text-2xl md:text-3xl font-serif ${theme === 'dark' ? 'text-white' : 'text-brown'} m-0`}>Effortlessly Seamless</h3>
                 </div>
-                <p className="text-khaki leading-relaxed">
+                <p className={`${theme === 'dark' ? 'text-white/80' : 'text-khaki'} leading-relaxed`}>
                   Dare to go deeper. The Magic Bra lifts, shapes, and disappears under any outfit — ideal for that deep V look. #PlungePerfection
                 </p>
               </div>
@@ -90,20 +95,20 @@ const ProductFeatures = () => {
           </div>
         </div>
 
-        {/* Modern Woman - Feature 4 */}
+        {/* === Feature 4 === */}
         <div className="mb-24">
           <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
-            <div className="w-full lg:w-1/2">
-              <h3 className="text-2xl md:text-3xl font-serif text-brown mb-4">Designed for the Modern Woman</h3>
-              <p className="text-khaki text-lg">
+            <div className="w-full lg:w-1/2 text-center lg:text-left">
+              <h3 className={`text-2xl md:text-3xl font-serif ${theme === 'dark' ? 'text-white' : 'text-brown'} mb-4`}>Designed for the Modern Woman</h3>
+              <p className={`${theme === 'dark' ? 'text-white/80' : 'text-khaki'} text-lg`}>
                 Maximum lift, seamless support, and invisible elegance — whether it's red carpet glam or a casual night out, feel sculpted, secure, and effortlessly stylish.
               </p>
             </div>
             <div className="w-full lg:w-1/2">
-              <div className="bg-cream/50 rounded-lg p-8">
-                <img 
-                  src="/images/features/feature_04.png" 
-                  alt="Designed for the Modern Woman" 
+              <div className={`${theme === 'dark' ? 'bg-[#350006]/50' : 'bg-cream/50'} rounded-lg p-8`}>
+                <img
+                  src="/images/features/feature_04.png"
+                  alt="Designed for the Modern Woman"
                   className="w-full rounded-lg"
                 />
               </div>
@@ -111,33 +116,33 @@ const ProductFeatures = () => {
           </div>
         </div>
 
-        {/* Fun Elements - Feature 5 */}
+        {/* === Feature 5 === */}
         <div className="mb-24">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="w-full lg:w-1/2">
-              <div className="bg-cream/50 rounded-lg p-8">
-                <img 
-                  src="/images/features/feature_05.png" 
-                  alt="Fun Elements, Endless Styles" 
+              <div className={`${theme === 'dark' ? 'bg-[#350006]/50' : 'bg-cream/50'} rounded-lg p-8`}>
+                <img
+                  src="/images/features/feature_05.png"
+                  alt="Fun Elements, Endless Styles"
                   className="w-full rounded-lg"
                 />
               </div>
             </div>
-            <div className="w-full lg:w-1/2">
-              <h3 className="text-2xl md:text-3xl font-serif text-brown mb-4">Fun Elements, Endless Styles</h3>
-              <p className="text-khaki text-lg">
+            <div className="w-full lg:w-1/2 text-center lg:text-left">
+              <h3 className={`text-2xl md:text-3xl font-serif ${theme === 'dark' ? 'text-white' : 'text-brown'} mb-4`}>Fun Elements, Endless Styles</h3>
+              <p className={`${theme === 'dark' ? 'text-white/80' : 'text-khaki'} text-lg`}>
                 One bra, endless outfit possibilities. Featuring satin areolae, a sleek front & back design, and an extra storage board — all tailored for your needs.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Features - Feature 6 */}
+        {/* === Feature 6 === */}
         <div className="mb-24">
           <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
-            <div className="w-full lg:w-1/2">
-              <h3 className="text-2xl md:text-3xl font-serif text-brown mb-4">All the Right Features</h3>
-              <ul className="text-khaki text-lg space-y-2">
+            <div className="w-full lg:w-1/2 text-center lg:text-left">
+              <h3 className={`text-2xl md:text-3xl font-serif ${theme === 'dark' ? 'text-white' : 'text-brown'} mb-4`}>All the Right Features</h3>
+              <ul className={`${theme === 'dark' ? 'text-white/80' : 'text-khaki'} text-lg space-y-2`}>
                 <li>• Ultra Push-Up Effect for a Naturally Enhanced Look</li>
                 <li>• Deep Plunge Design – Perfect for Low-Cut Dresses & Tops</li>
                 <li>• Seamless & Invisible Under Clothing</li>
@@ -145,10 +150,10 @@ const ProductFeatures = () => {
               </ul>
             </div>
             <div className="w-full lg:w-1/2">
-              <div className="bg-cream/50 rounded-lg p-8">
-                <img 
-                  src="/images/features/feature_06.png" 
-                  alt="All the Right Features" 
+              <div className={`${theme === 'dark' ? 'bg-[#350006]/50' : 'bg-cream/50'} rounded-lg p-8`}>
+                <img
+                  src="/images/features/feature_06.png"
+                  alt="All the Right Features"
                   className="w-full rounded-lg"
                 />
               </div>
@@ -160,4 +165,4 @@ const ProductFeatures = () => {
   );
 };
 
-export default ProductFeatures; 
+export default ProductFeatures;

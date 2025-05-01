@@ -11,7 +11,7 @@ const CTA = () => {
           <p className="text-lg md:text-xl text-brown/80 mb-10 leading-relaxed">
             Discover our collection of premium products designed for your comfort and confidence.
           </p>
-          <Link to="/shop">
+          <Link to="/checkout">
             <button 
               className="bg-brown text-cream px-8 py-4 text-lg font-medium rounded-lg
                 hover:bg-brown/90 transition-all duration-300

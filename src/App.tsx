@@ -2,13 +2,11 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { CartProvider } from "@/context/CartContext";
-import HomePage from "@/pages/HomePage";
-import StoryPage from "./pages/StoryPage";
-import ShopPage from "./pages/ShopPage";
-import NotFound from "./pages/NotFound";
-import CheckoutPage from "@/pages/CheckoutPage";
+import { ThemeProvider } from "./context/ThemeContext";
+import AppRoutes from "./AppRoutes";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -17,17 +15,16 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <CartProvider>
-        <Router>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/story" element={<StoryPage />} />
-            <Route path="/shop" element={<ShopPage />} />
-            <Route path="/checkout" element={<CheckoutPage />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Router>
-      </CartProvider>
+      <ThemeProvider>
+        <CartProvider>
+          <Router>
+            <ScrollToTop />
+            <div className="min-h-screen bg-background">
+              <AppRoutes />
+            </div>
+          </Router>
+        </CartProvider>
+      </ThemeProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
