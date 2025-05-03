@@ -37,7 +37,7 @@ const FeaturedProduct = () => {
   };
 
   return (
-    <section className={`py-16 ${theme === 'dark' ? 'bg-[#392200]' : 'bg-cream'} transition-colors duration-300`}>
+    <section className={`py-16 ${theme === 'dark' ? 'bg-[#390002]' : 'bg-cream'} transition-colors duration-300`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-start gap-8">
 
