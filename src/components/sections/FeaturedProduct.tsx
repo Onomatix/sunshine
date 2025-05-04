@@ -47,8 +47,7 @@ const FeaturedProduct = () => {
             <div className="block lg:hidden mb-6 text-center space-y-2">
               <h1 className={`text-2xl font-serif ${theme === 'dark' ? 'text-white' : 'text-brown'}`}>MAGIC BRA PREMIUM BUNDLE</h1>
               <div className="flex justify-center items-baseline gap-2">
-                <span className={`text-xl font-serif ${theme === 'dark' ? 'text-white' : 'text-brown'}`}>RM 399.00</span>
-                <span className={`text-sm ${theme === 'dark' ? 'text-white/60' : 'text-khaki'} line-through`}>RM 459.00</span>
+                <span className={`text-xl font-serif ${theme === 'dark' ? 'text-white' : 'text-brown'}`}>RM 99.00</span>
               </div>
               <div className="flex justify-center items-center gap-2">
                 <div className="flex">
@@ -115,8 +114,7 @@ const FeaturedProduct = () => {
 
             {/* Desktop Price */}
             <div className="flex items-baseline gap-3 hidden lg:flex">
-              <span className={`text-3xl font-serif ${theme === 'dark' ? 'text-white' : 'text-brown'}`}>RM 59.00</span>
-              <span className={`text-lg ${theme === 'dark' ? 'text-white/60' : 'text-khaki'} line-through`}>RM 99.00</span>
+              <span className={`text-3xl font-serif ${theme === 'dark' ? 'text-white' : 'text-brown'}`}>RM 99.00</span>
             </div>
 
             {/* Desktop Reviews */}

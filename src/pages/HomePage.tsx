@@ -4,6 +4,7 @@ import WriteUp from "@/components/sections/WriteUp";
 import FeaturedProduct from "@/components/sections/FeaturedProduct";
 import ProductFeatures from "@/components/sections/ProductFeatures";
 import Testimonials from "@/components/sections/Testimonials";
+import CTA from "@/components/sections/CTA";
 
 
 const HomePage = () => {
@@ -14,7 +15,7 @@ const HomePage = () => {
       <FeaturedProduct />
       <ProductFeatures />
       <Testimonials />
-      
+      <CTA />
     </Layout>
   );
 };
