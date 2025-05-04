@@ -9,11 +9,10 @@ const Hero = () => {
           alt="Hero Background" 
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-black/30" />
       </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col items-center gap-8">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif font-medium text-cream text-center drop-shadow-2xl">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif font-medium text-cream text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
             Feel the Magic
           </h1>
           <Link to="/story">
