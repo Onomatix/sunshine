@@ -93,6 +93,12 @@ const GallerySection = () => {
           Gallery
         </h2>
 
+        <div className={`max-w-3xl mx-auto mb-12 text-lg ${theme === 'dark' ? 'text-white/80' : 'text-brown/80'} leading-relaxed text-center`}>
+          <p>
+            Her journey began at 17, working behind the scenes in event production—until her natural charisma brought her in front of the camera. Since then, she has built a remarkable 15-year career as an international model and emcee, gracing campaigns for TM UNIFI, AVON, McDonald's, and Pizza Hut, and walking runways for celebrated designers like Melinda Looi and Jovian Mandagie.
+          </p>
+        </div>
+
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           {displayedImages.map((img, idx) => (
             <div key={idx} className="relative w-full pb-[133%]">

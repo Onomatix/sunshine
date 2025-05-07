@@ -25,10 +25,7 @@ const BioSection = () => {
               </h1>
               <div className={`space-y-6 text-lg ${theme === 'dark' ? 'text-white/80' : 'text-brown/80'} leading-relaxed text-center md:text-left`}>
                 <p>
-                  Sunshine, born in 1988 in Ipoh, Malaysia, carries a unique blend of Indian, British, and Mongolian Chinese heritage. With early years spent in London and a background in Public Relations, she began her career at 17 in the event scene before being discovered as a model.
-                </p>
-                <p>
-                  She's starred in commercials for TM UNIFI, AVON, and McDonald's, and has walked for designers like Melinda Looi and Jovian Mandagie. With 15 years in the industry and shows across Asia and the Middle East, Sunshine is also a sought-after emcee known for her charm and presence.
+                  Sunshine is a dynamic force in the world of fashion, beauty, and entertainment. Born in Ipoh, Malaysia, in 1988 and raised partly in London, she brings a rare blend of Indian, British, and Mongolian-Chinese heritage that sets her apart in both presence and personality.
                 </p>
               </div>
             </div>

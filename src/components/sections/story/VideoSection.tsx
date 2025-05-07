@@ -32,6 +32,11 @@ const VideoSection = () => {
     <section className={`py-16 ${theme === 'dark' ? 'bg-[#0d0400]' : 'bg-white'} transition-colors duration-300`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className={`text-3xl md:text-4xl font-serif ${theme === 'dark' ? 'text-white' : 'text-brown'} mb-12 text-center`}>Videos</h2>
+        <div className={`max-w-3xl mx-auto mb-12 text-lg ${theme === 'dark' ? 'text-white/80' : 'text-brown/80'} leading-relaxed text-center`}>
+          <p>
+            Sunshine's experience spans across Asia and the Middle East, making her a recognizable face on and off the stage. As an emcee, she is known for her warm energy, clear articulation, and ability to connect with any audience. Today, Sunshine continues to shine—not just as a model, but as a voice and brand that empowers, inspires, and dazzles.
+          </p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {storyData.videos.map((video, index) => (
             <div key={index} className={`space-y-4 border ${theme === 'dark' ? 'border-white/10' : 'border-brown/30'} rounded-xl p-4`}>

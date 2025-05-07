@@ -1,37 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTheme } from '@/context/ThemeContext';
 
 export const testimonials = [
   {
-    "name": "Mellyna Lee New",
-    "text": "They are very helpful and awesome! The NipKiss really invisible and well supported when wearing it. Who needs bra anymore when you have NipKiss from Sunshine Cosmetics!",
-    "emojis": "💯💯💯💯💯"
+    "text": "I was honestly impressed with how fitted the support feels — it gives shape without that stiff, fake push-up feeling. Super comfortable to move in, and I don't have to worry about it slipping or falling off. The texture is so soft and light, it blends under clothes without showing through. Compared to other brands I've tried, this one just fits better. Others tend to leave air gaps or feel off in shape — but this one sticks evenly, stays put, and really molds to you.",
+    "emojis": "🥰"
   },
   {
-    "name": "Melisha Lin",
-    "text": "Go bra less with Nip Kiss as it's so comfortable, and you don't feel like you're wearing anything. Super easy, just slip it on. And rock your outfits. One of my best buy for sure.",
-    "emojis": "✨"
-  },
-  {
-    "name": "Nana Liey",
-    "text": "I'm in love with the nip kiss. Tried other brands. I really feel that the nipkiss does the job equally as good if not better.",
+    "text": "I was skeptical at first, but after trying these push-up cups, I'm a believer. They offer incredible comfort without compromising on the desired lift. Thank you Sunshine Cosmetics.",
     "emojis": "❤️"
   },
   {
-    "name": "Sharon Gill",
-    "text": "I particularly love the packaging, hygienic. Affordable and really comfortable to wear.",
-    "emojis": "👍"
+    "text": "These push-up cups are a game-changer. They enhance my natural shape beautifully and are so comfortable that I forget I'm wearing them. I can't wait to spread the word across to my besties.",
+    "emojis": "💓"
   },
   {
-    "name": "Pauline Cassiopeia",
-    "text": "Best nipple pad ever!! So far I've reused more than 40 times it's still functioning well! Best dance partner of mine as sports bra really hurts my shoulder.",
-    "emojis": "❤️❤️💃"
+    "text": "Sunshine Cosmetics Butterfly Push up cups 2.0. Maxi Plunge B Push-Up Cups have transformed my wardrobe. The lift and support they provide are phenomenal, making every outfit look better. I just enjoy sipping on my wine and can't stop checking myself out. I feel like Cleopatra on top of the world.",
+    "emojis": "❤️"
   }
 ];
 
 const Testimonials = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const testimonialsPerPage = 3;
+  const testimonialsPerPage = window.innerWidth < 768 ? 1 : 2;
   const totalPages = Math.ceil(testimonials.length / testimonialsPerPage);
   const { theme } = useTheme();
 
@@ -42,6 +33,28 @@ const Testimonials = () => {
   const prevPage = () => {
     setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
   };
+
+  // Auto-scroll functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextPage();
+    }, 5000); // Change testimonial every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Update testimonials per page on window resize
+  useEffect(() => {
+    const handleResize = () => {
+      const newTestimonialsPerPage = window.innerWidth < 768 ? 1 : 2;
+      if (newTestimonialsPerPage !== testimonialsPerPage) {
+        setCurrentPage(0); // Reset to first page when changing layout
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const currentTestimonials = testimonials.slice(
     currentPage * testimonialsPerPage,
@@ -57,7 +70,7 @@ const Testimonials = () => {
         
         <div className="relative max-w-6xl mx-auto">
           {/* Testimonials Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {currentTestimonials.map((testimonial, index) => (
               <div 
                 key={`${currentPage}-${index}`}
@@ -65,13 +78,10 @@ const Testimonials = () => {
               >
                 <div className="flex-1">
                   <p className="text-2xl mb-4">{testimonial.emojis}</p>
-                  <p className={`${theme === 'dark' ? 'text-white/80' : 'text-khaki'} italic mb-6 leading-relaxed`}>
+                  <p className={`${theme === 'dark' ? 'text-white/80' : 'text-khaki'} italic leading-relaxed`}>
                     "{testimonial.text}"
                   </p>
                 </div>
-                <p className={`${theme === 'dark' ? 'text-white' : 'text-brown'} font-medium`}>
-                  - {testimonial.name}
-                </p>
               </div>
             ))}
           </div>
